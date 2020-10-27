@@ -2,82 +2,90 @@
 
 {
   
-  const ul = document.querySelector('ul');
+  const show = document.getElementById('show'); //結果表示のためのul
+  const invisible = document.getElementsByClassName('invisible');
+  const visible = document.getElementsByClassName('visible');
+  const linkbox = document.getElementById('linkbox');
+  const link = document.getElementById('link');
+  linkbox.addEventListener('focus',() => {
+    link.classList.remove(invisible);
+    link.classList.add(visible);
+  });
   
   
   function Result (text) {
     const li = document.createElement('li');
     li.textContent = text;
-    ul.appendChild(li);
+    show.appendChild(li);
   }
   
-  function childTsumo (childPay,parentPay) {
-    const sum = (childPay * 2) + parentPay;
-
-    if (sum < 8000) {
-      Result(`子${childPay}\t親${parentPay}`);
-    } else if (sum == 8000) {
-      Result(`子${childPay}\t親${parentPay}\t満貫です`);
-    } else if (sum == 12000) {
-      Result(`子${childPay}\t親${parentPay}\t跳満です`);
-    } else if (sum == 16000) {
-      Result(`子${childPay}\t親${parentPay}\t倍満です`);
-    } else if (sum == 24000) {
-      Result(`子${childPay}\t親${parentPay}\t三倍満です`);
-    } else if (sum == 32000) {
-      Result(`子${childPay}\t親${parentPay}\t役満です！！`);
+    function childTsumo (childPay,parentPay) {
+      const sum = (childPay * 2) + parentPay;
+  
+      if (sum < 8000) {
+        Result(`子${childPay}\t親${parentPay}`);
+      } else if (sum == 8000) {
+        Result(`子${childPay}\t親${parentPay}\t満貫です`);
+      } else if (sum == 12000) {
+        Result(`子${childPay}\t親${parentPay}\t跳満です`);
+      } else if (sum == 16000) {
+        Result(`子${childPay}\t親${parentPay}\t倍満です`);
+      } else if (sum == 24000) {
+        Result(`子${childPay}\t親${parentPay}\t三倍満です`);
+      } else if (sum == 32000) {
+        Result(`子${childPay}\t親${parentPay}\t役満です！！`);
+      }
+    }
+  
+    function parentTsumo (childrenPay) {
+      const sum = (childrenPay * 3);
+  
+      if (sum < 12000) {
+        Result(`${childrenPay}オール`);
+      } else if (sum == 12000) {
+        Result(`${childrenPay}オール\t満貫です`);
+      } else if (sum == 18000) {
+        Result(`${childrenPay}オール\t跳満です`);
+      } else if (sum == 24000) {
+        Result(`${childrenPay}オール\t倍満です`);
+      } else if (sum == 36000) {
+        Result(`${childrenPay}オール\t三倍満です`);
+      } else if (sum == 48000) {
+        Result(`${childrenPay}オール\t役満です！！`);
     }
   }
-
-  function parentTsumo (childrenPay) {
-    const sum = (childrenPay * 3);
-
-    if (sum < 12000) {
-      Result(`${childrenPay}オール`);
-    } else if (sum == 12000) {
-      Result(`${childrenPay}オール\t満貫です`);
-    } else if (sum == 18000) {
-      Result(`${childrenPay}オール\t跳満です`);
-    } else if (sum == 24000) {
-      Result(`${childrenPay}オール\t倍満です`);
-    } else if (sum == 36000) {
-      Result(`${childrenPay}オール\t三倍満です`);
-    } else if (sum == 48000) {
-      Result(`${childrenPay}オール\t役満です！！`);
-  }
-}
-
-function childRon (point) {
-  if (point < 8000) {
-    Result(`${point}点です`);
-  } else if (point == 8000) {
-    Result(`${point}点\t満貫です`);
-  } else if (point == 12000) {
-    Result(`${point}点\t跳満です`);
-  } else if (point == 16000) {
-    Result(`${point}点\t倍満です`);
-  } else if (point == 24000) {
-    Result(`${point}点\t三倍満です`);
-  } else if (point == 32000){
-    Result(`${point}点\t役満です！！`);
-  }
-}
-
-function parentRon (point) {
-    if (point < 12000) {
+  
+  function childRon (point) {
+    if (point < 8000) {
       Result(`${point}点です`);
-    } else if (point == 12000) {
+    } else if (point == 8000) {
       Result(`${point}点\t満貫です`);
-    } else if (point == 18000) {
+    } else if (point == 12000) {
       Result(`${point}点\t跳満です`);
-    } else if (point == 24000) {
+    } else if (point == 16000) {
       Result(`${point}点\t倍満です`);
-    } else if (point == 36000) {
+    } else if (point == 24000) {
       Result(`${point}点\t三倍満です`);
-    } else if (point == 48000) {
+    } else if (point == 32000){
       Result(`${point}点\t役満です！！`);
     }
-}
+  }
+  
+  function parentRon (point) {
+      if (point < 12000) {
+        Result(`${point}点です`);
+      } else if (point == 12000) {
+        Result(`${point}点\t満貫です`);
+      } else if (point == 18000) {
+        Result(`${point}点\t跳満です`);
+      } else if (point == 24000) {
+        Result(`${point}点\t倍満です`);
+      } else if (point == 36000) {
+        Result(`${point}点\t三倍満です`);
+      } else if (point == 48000) {
+        Result(`${point}点\t役満です！！`);
+      }
+  }
     
 function Hora (han,hu) { //ツモかロンか + 親か子かによって処理をif文で分岐
   const tsumo = document.getElementById('tsumo');
@@ -341,7 +349,7 @@ function Hora (han,hu) { //ツモかロンか + 親か子かによって処理�
       let hanValue = document.getElementById('han').value;
       let huValue = document.getElementById('hu').value; //入力された翻と符の値を取得
       hanValue = parseInt(hanValue,10);
-      huValue = parseInt(huValue,10); //数字として扱う
+      huValue = parseInt(huValue,10);
 
       if (huValue > 20 && huValue < 30) { //符を切り上げするためのif文
         huValue = 30;
@@ -363,7 +371,7 @@ function Hora (han,hu) { //ツモかロンか + 親か子かによって処理�
     const clearButton = document.getElementById('clearBtn');
     clearButton.addEventListener('click', ()=> {
       count = 0;
-      ul.innerHTML = '';
+      show.innerHTML = '';
       const isDisable = showBtn.classList.contains('disable');
       if (isDisable == true) {
         showBtn.classList.remove('disable');

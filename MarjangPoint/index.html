@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+      <ul id="linkbox">
+        <li id="link"class="invisible"><a href="">収支計算ツール</a></li>
+      </ul>
     <h1>麻雀点数計算ツール</h1>
     <main>
       <section id="inputArea">
@@ -27,15 +30,16 @@
           <button id="clearBtn">Clear</button>
         </diV>
       </section>
-  
+      
       <section id="showPoints">
         <o>こちらに結果が表示されます</o>
-        <ul>
+        <ul id="show">
         </ul>
       </section>
     </main>
 
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </body>
 
 </html>

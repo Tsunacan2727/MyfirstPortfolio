@@ -67,5 +67,29 @@ legend {
 
 .disable {
   background-color: dimgray;
+}
 
+#linkbox {
+  position: fixed;
+  background-color: aqua;
+  width: 40px;
+  height: 40px;
+  transition: all .2s;
+  overflow: hidden;
+}
+
+#linkbox:hover {
+  padding: 5px;
+  width: 150px;
+  height: 200px;
+  transition: .5s;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+  transition: .2;
 }
