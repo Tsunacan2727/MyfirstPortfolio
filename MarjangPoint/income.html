@@ -3,15 +3,59 @@
   <head>
     <meta charset="utf-8">
     <title>収支記録</title>
+    <link rel="stylesheet" href="css/style_income.css">
   </head>
   <body>
-    <div id="result">
-      {{ message }}
+    <h1>麻雀結果表示アプリ</h1>
+    <div id="point_forms">
+      <div id="kamicha">
+        <label for="kamicha">上家</label><br>
+        <input type="number" name="kamicha" v-model="kamicha">
+      </div>
+      <div id=column>
+        <label for="toimen">対面</label>
+        <input type="number" name="toimen" v-model="toimen">
+        <button id="OK">OK</button>
+        <label for="zicha" id="zicha">自家</label>
+        <input type="number" name="zicha" v-model="zicha">
+      </div>
+      <div id="shimocha">
+        <label for="shimocha">下家</label><br>
+        <input type="number" name="shimocha" v-model="shimocha">
+      </div>
+
+      <div id=sum>
+        <p>4人の合計得点は{{ sum }}です</p>
+        <p>{{ isCorrect }}</p>
+      </div>
+    </div>
+
+    <div id="results">
+      <table>
+        <tr>
+          <th>対面</th>
+          <th>上家</th>
+          <th>自家</th>
+          <th>下家</th>
+        </tr>
+        <tr>
+          <td id="toimen_result">50.0</td>
+          <td id="kamicha_result">50.0</td>
+          <td id="zicha_result">50.0</td>
+          <td id="shimocha_result">50.0</td>
+        </tr>
+        <tr>
+          <td>45.0</td>
+          <td>45.0</td>
+          <td>45.0</td>
+          <td>45.0</td>
+        </tr>
+      </table>
     </div>
 
 
 
-    <script src="vue.js"></script>
-    <script src="balanceChecker.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/balanceChecker.js"></script>
   </body>
 </html>

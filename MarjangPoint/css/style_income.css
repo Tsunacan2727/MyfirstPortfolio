@@ -1,0 +1,57 @@
+body {
+  padding: 20px;
+background-color: gray;
+}
+
+h1 {
+  text-align: center;
+}
+
+#point_forms {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#column {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 130px;
+  margin: 40px 30px;
+}
+
+#kamicha {
+  margin-top: 60px;
+}
+
+#shimocha {
+  margin-top: 60px;
+}
+
+input {
+  font-weight: bold;
+}
+
+#sum {
+  position: absolute;
+  right: 70%;
+  font-weight: bold;
+}
+
+#results {
+  width: 100%;
+}
+
+table {
+  width: 500px;
+  margin: 30px auto 0 auto;
+  background-color: tomato;
+  border: solid;
+}
+
+table * {
+  border: solid;
+}
