@@ -1,6 +1,6 @@
 body {
   padding: 20px;
-background-color: gray;
+background-color: rgb(235, 235, 235);
 }
 
 h1 {
@@ -18,7 +18,7 @@ h1 {
   flex-direction: column;
 }
 
-button {
+#OK {
   width: 130px;
   margin: 40px 30px;
 }
@@ -43,15 +43,34 @@ input {
 
 #results {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 table {
   width: 500px;
   margin: 30px auto 0 auto;
-  background-color: tomato;
+  background-color: white;
   border: solid;
 }
 
 table * {
   border: solid;
+}
+
+td {
+  font-weight: bold;
+}
+
+.underzero {color: rgb(255, 22, 22)}
+
+#resetButton {
+  width: 150px;
+  margin:20px auto 0 auto;
+}
+
+button:hover {
+  cursor: pointer;
+  user-select: none;
 }
