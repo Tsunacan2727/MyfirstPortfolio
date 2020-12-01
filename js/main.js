@@ -259,8 +259,9 @@ function Hora (han,hu) { //ツモかロンか + 親か子かによって処理�
               case 30: childRon(7700); break;
             }
             if (hu >= 40) {
-              childRon(8000); break;
+              childRon(8000);
             }
+            break;
 
             case 5: childRon(8000); break;
             case 6: 
@@ -317,10 +318,9 @@ function Hora (han,hu) { //ツモかロンか + 親か子かによって処理�
               case 30: parentRon(11600); break;
             }
             if (hu >= 40) {
-              parentRon(12000); break;
-            } else if (hu == false) {
-              Result("符の値を指定してください");
+              parentRon(12000);
             }
+            break;
 
             case 5: parentRon(12000); break;
             case 6:
